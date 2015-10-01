@@ -9,6 +9,8 @@ post '/' do
 
   APPLICATION_DIR = "/var/www/#{user_name}/#{app_name}"
 
+  `mkdir -p #{APPLICATION_DIR}`
+
   # ソースのチェックアウト
   Dir.chdir "#{APPLICATION_DIR}/releases" do
     #`mkdir releases/#{deploy_timestamp}`
